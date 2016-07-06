@@ -1,5 +1,17 @@
 $(document).ready(function() {
+
+  var playSquare = function(square, player) {
+    square.append(player.toUpperCase()).addClass(player.toLowerCase());
+  }
+
   $('.square').on('click', function() {
-    $(this).append('X');
+
+    if ( !( $(this).hasClass('x') || $(this).hasClass('o') ) )  {
+
+      playSquare($(this), 'x');
+
+    }
+
   });
+
 });
