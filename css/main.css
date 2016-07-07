@@ -14,4 +14,9 @@ td {
   text-align: center;
   font-size: 160px;
   padding: 0px;
+  cursor: pointer;
+}
+
+.x, .o {
+  cursor: default;
 }
