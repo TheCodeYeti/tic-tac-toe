@@ -1,5 +1,15 @@
 $(document).ready(function() {
 
+  var xWins = 0;
+  var yWins = 0;
+
+  var player = 'x';
+
+  var updateWins = function() {
+    $('#x-win-count').html(xWins);
+    $('#y-win-count').html(yWins);
+  }
+
   var playSquare = function(square, player) {
     square.append(player.toUpperCase()).addClass(player.toLowerCase());
   }
@@ -24,19 +34,20 @@ $(document).ready(function() {
   // }, function (event) {
   //   console.log(event);
   // });
-  var player;
+
+  updateWins();
 
   $('.square').on('click', function() {
 
     if ( !( $(this).hasClass('x') || $(this).hasClass('o') ) )  {
+
+      playSquare($(this), player);
 
       if (player == 'x') {
         player = 'o';
       } else {
         player = 'x';
       }
-
-      playSquare($(this), player);
 
       checkForWin('row1');
       checkForWin('row2');
