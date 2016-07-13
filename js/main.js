@@ -15,6 +15,11 @@ $(document).ready(function() {
   var awardWin = function(player) {
     wins[player] += 1;
     updateWins();
+    resetBoard();
+  }
+
+  var resetBoard = function() {
+    $('.square').removeClass('x').removeClass('y').html('');
   }
 
   var playSquare = function(square, player) {
