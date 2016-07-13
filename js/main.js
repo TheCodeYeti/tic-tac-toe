@@ -1,13 +1,20 @@
 $(document).ready(function() {
 
-  var xWins = 0;
-  var yWins = 0;
+  var wins = {
+    x: 0,
+    y: 0
+  };
 
   var player = 'x';
 
   var updateWins = function() {
-    $('#x-win-count').html(xWins);
-    $('#y-win-count').html(yWins);
+    $('#x-win-count').html(wins['x']);
+    $('#y-win-count').html(wins['y']);
+  }
+
+  var awardWin = function(player) {
+    wins[player] += 1;
+    updateWins();
   }
 
   var playSquare = function(square, player) {
@@ -24,6 +31,7 @@ $(document).ready(function() {
         }
       });
       if ( count == 3 ) {
+        awardWin(player);
         console.log(player + ' WINS!!!');
       }
     }
@@ -43,12 +51,6 @@ $(document).ready(function() {
 
       playSquare($(this), player);
 
-      if (player == 'x') {
-        player = 'o';
-      } else {
-        player = 'x';
-      }
-
       checkForWin('row1');
       checkForWin('row2');
       checkForWin('row3');
@@ -57,6 +59,12 @@ $(document).ready(function() {
       checkForWin('col3');
       checkForWin('diag1');
       checkForWin('diag2');
+
+      if (player == 'x') {
+        player = 'o';
+      } else {
+        player = 'x';
+      }
 
     }
 
