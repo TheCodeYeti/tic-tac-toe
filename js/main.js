@@ -2,14 +2,14 @@ $(document).ready(function() {
 
   var wins = {
     x: 0,
-    y: 0
+    o: 0
   };
 
   var player = 'x';
 
   var updateWins = function() {
     $('#x-win-count').html(wins['x']);
-    $('#y-win-count').html(wins['o']);
+    $('#o-win-count').html(wins['o']);
   }
 
   var awardWin = function(player) {
@@ -48,6 +48,7 @@ $(document).ready(function() {
     } else {
       player = 'x';
     }
+    $('#current-turn').html(player.toUpperCase());
   }
   // $(document).on('click').toggle(function() {
   //   console.log();
