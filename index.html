@@ -8,28 +8,39 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
   </head>
   <body>
-    <table id=game-board>
-      <tr>
-        <th>
-          
-        </th>
-      </tr>
-      <tr>
-        <td class="square row1 col1 diag1" id=row1-col1></td>
-        <td class="square row1 col2" id=row1-col2></td>
-        <td class="square row1 col3 diag2" id=row1-col3></td>
-      </tr>
-      <tr>
-        <td class="square row2 col1" id=row2-col1></td>
-        <td class="square row2 col2 diag1 diag2" id=row2-col2></td>
-        <td class="square row2 col3" id=row2-col3></td>
-      </tr>
-      <tr>
-        <td class="square row3 col1 diag2" id=row3-col1></td>
-        <td class="square row3 col2" id=row3-col2></td>
-        <td class="square row3 col3 diag1" id=row3-col3></td>
-      </tr>
-    </table>
+    <section class=game>
+      <div class="game-status-area">
+        <div class="game-status win-count">
+          <span>X</span><span id="x-win-count"></span>
+        </div>
+        <div class="game-status current-turn" id="current-turn">
+          <span>X's Turn</span>
+        </div>
+        <div class="game-status win-count">
+          <span>O</span><span id="y-win-count"></span>
+        </div>
+      </div>
+
+      <table id=game-board>
+
+        <tr>
+          <td class="square row1 col1 diag1" id=row1-col1></td>
+          <td class="square row1 col2" id=row1-col2></td>
+          <td class="square row1 col3 diag2" id=row1-col3></td>
+        </tr>
+        <tr>
+          <td class="square row2 col1" id=row2-col1></td>
+          <td class="square row2 col2 diag1 diag2" id=row2-col2></td>
+          <td class="square row2 col3" id=row2-col3></td>
+        </tr>
+        <tr>
+          <td class="square row3 col1 diag2" id=row3-col1></td>
+          <td class="square row3 col2" id=row3-col2></td>
+          <td class="square row3 col3 diag1" id=row3-col3></td>
+        </tr>
+      </table>
+
+    </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script src="js/main.js"></script>

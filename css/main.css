@@ -2,27 +2,60 @@
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
+  font-family: sans-serif;
+}
+
+table {
+  width: 100%;
 }
 
 td {
   height: 200px;
   width: 200px;
-  max-width: 200px;
-  max-height: 200px;
+  /*max-height: 200px;
+  max-width: 200px;*/
   border-style: solid;
-  font-family: sans-serif;
   text-align: center;
   font-size: 160px;
   padding: 0px;
   cursor: pointer;
 }
 
-th {
-  column-span: 3;
-  border-style: solid;
-  height: 100px;
-}
-
 .x, .o {
   cursor: default;
+}
+
+.game {
+  width: 600px;
+}
+
+.game-status {
+  border-style: solid;
+  height: 100%;
+  margin: 0px;
+  display: inline-block;
+  border-width: 2px;
+  font-size: 70px;
+}
+
+.game-status-area {
+  display: flex;
+  border-style: solid;
+  border-width: 2px;
+  height: 100px;
+  margin: 2px;
+}
+
+.win-count {
+  width: 20%;
+}
+
+.current-turn {
+  width: 60%;
+  text-align: center;
+}
+
+.game-status span {
+  display: inline-block;
+  vertical-align: middle;
 }
